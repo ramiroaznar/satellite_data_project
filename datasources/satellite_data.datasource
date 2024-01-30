@@ -5,8 +5,7 @@ SCHEMA >
     `latitude` Float32 `json:$.latitude`,
     `longitude` Float32 `json:$.longitude`,
     `satellite_name` String `json:$.satellite_name`,
-    `timestamp` DateTime `json:$.timestamp`,
-    `satellite_provider` LowCardinality(String) `json:$.satellite_provider`
+    `timestamp` DateTime `json:$.timestamp`
 
 ENGINE "MergeTree"
 ENGINE_PARTITION_KEY "toYYYYMM(timestamp)"
