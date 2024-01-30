@@ -1,0 +1,12 @@
+TOKEN "satellite_data_token" APPEND
+
+
+SCHEMA >
+    `latitude` Float32 `json:$.latitude`,
+    `longitude` Float32 `json:$.longitude`,
+    `satellite_name` String `json:$.satellite_name`,
+    `timestamp` DateTime `json:$.timestamp`
+
+ENGINE "MergeTree"
+ENGINE_PARTITION_KEY "toYYYYMM(timestamp)"
+ENGINE_SORTING_KEY "satellite_name"
